@@ -21,3 +21,15 @@ h1 {
     text-align: center;
 
 }
+
+.innerWrapper {
+    padding: 20px 0; 
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 26px; 
+    color: chocolate;
+    text-align: center; 
+
+
+
+}
