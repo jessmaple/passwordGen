@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-
-    <title>Password Generator</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="javascript" href="index.js">    
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
-
 <body>
-      <header>
-          <h1><b>Password Generator</b></h1>
-      </header>
-
-      <div class ="container">
-           
-      <div class="innerWrapper">
-
-         <div class="passwordForm">
-          
-          <form action="" method="get" class="form-example">
-          
-          <div class="form-example">
-             <label for="name">Enter your name:</label>
-             <input type="text" name="name" id="name" required>
-          </div>
-          <div class="form-example">
-            <label for="email"> Enter your email:</label>
-            <input type="email" name="email" id="email" required>
+    <div class="container">
+        <h2>Password Generator</h2>
+        <div class="result-container"
+             <span id="result"></div>
+            <button class="btn" id="clipboard">
+                 <i class="far fa-clipboard"></i>
+            </button>
+      </div>
+        <div class="settings">
+            <div class="setting">
+                <label>Password Length</label>
+                <input type="number" id="length" min='4' max='20' value='20'/>
             </div>
-            <div class="form-example">
-              <input type="submit" value="Subcribe">
+            <div class="setting">
+              <label>Include uppercase letters</label>
+              <input type="checkbox" id="uppercase" checked />
             </div>
-          </div>
-
-          </form>
-
+            <div class="setting">
+                 <label>Include lowercase letters</label>
+                 <input type="checkbox" id="uppercase" checked />
+            </div> 
+            <div class="setting">
+                 <label>Include numbers</label>
+                 <input type="checkbox" id="symbols" checked />
+            </div>
+            <div class="setting">
+                 <label>Include symbols</label>
+                 <input type="checkbox" id="symbols" checked />
+            </div>
          </div>
+         <button class="btn btn-large" id="generate">
+                 generate Password
+         </button>   
 
-
-      </div>
-   <!--Add form, input, multiple, text area, button,   -->
-      
-
-      </div>
 </body>
 </html>
