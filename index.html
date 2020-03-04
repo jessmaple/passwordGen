@@ -1,92 +1,66 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="index.js"></script>
-  <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <!-- INSERT HTML HERE -->
-<div class="container">
-	<h2>Password Generator</h2>
-	<div class="result-container">
-		<span id="result"></span>
-		<button class="btn" id="clipboard">
-			<i class="far fa-clipboard"></i>
-		</button>
-	</div>
-	<div class="settings">
-		<div class="setting">
-			<label>Password length</label>
-			<input type="number" id="length" min='4' max='20' value='20' />
-		</div>
-		<div class="setting">
-			<label>Include uppercase letters</label> 
-			<input type="checkbox" id="uppercase" checked />
-		</div>
-		<div class="setting">
-			<label>Include lowercase letters</label> 
-			<input type="checkbox" id="lowercase" checked />
-		</div>
-		<div class="setting">
-			<label>Include numbers</label> 
-			<input type="checkbox" id="numbers" checked />
-		</div>
-		<div class="setting">
-			<label>Include symbols</label> 
-			<input type="checkbox" id="symbols" checked />
-		</div>
-	</div>
-	<button class="btn btn-large" id="generate">
-		Generate password
-	</button>
-</div>
+    <div class="container border w-auto mt-5 pb-5">
+        <div class="row">
+            <div class="col text-center mb-4 display-3">
+                <header>
+                    <h1>Password Generator</h1>
+                </header>
+            </div>
+        </div>
+        <div class="container pb-5 shadow">
+            <div class="pl-4 pr-4">
+                <div class="row">
+                    <div class="col pb-2 mt-4 mb-3 border-bottom display-3">
+                        <h2>Generate a Password</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 pb-2 mb-3 w-100 border-bottom ">
+                        <textarea readonly id="password" class="w-100 text-center text-monospace p-3"
+                            placeholder="Password" aria-label="Generated Password"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6 w-auto clearfix">
+                        <button class="btn btn-sm p-3 text-white font-size-3 font-weight-bold float-left" id="generate"
+                            onclick="generatePassword()">Generate Password</button>
+                    </div>
 
+                    <div class="col-xs-6 col-sm-6 col-md-6 w-auto clearfix">
+                        <button class="btn btn-sm p-3 text-white font-weight-bold float-right" id="copy"
+                            onclick="copyText()">Copy to Clipboard</button>
+                    </div>
+                </div>
 
-<!-- SOCIAL PANEL HTML -->
-<div class="social-panel-container">
-	<div class="social-panel">
-		<p>Created with <i class="fa fa-heart"></i> by
-			<a target="_blank" href="https://florin-pop.com">Florin Pop</a></p>
-		<button class="close-btn"><i class="fas fa-times"></i></button>
-		<h4>Get in touch on</h4>
-		<ul>
-			<li>
-				<a href="https://www.patreon.com/florinpop17" target="_blank">
-					<i class="fab fa-discord"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://twitter.com/florinpop1705" target="_blank">
-					<i class="fab fa-twitter"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://linkedin.com/in/florinpop17" target="_blank">
-					<i class="fab fa-linkedin"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://facebook.com/florinpop17" target="_blank">
-					<i class="fab fa-facebook"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://instagram.com/florinpop17" target="_blank">
-					<i class="fab fa-instagram"></i>
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<button class="floating-btn">
-	Get in Touch
-</button>
+            </div>
+        </div>
+    </div>
 
-<div class="floating-text">
-	Part of <a href="https://florin-pop.com/blog/2019/09/100-days-100-projects" target="_blank">#100Days100Projects</a>
-</div>
+    <script src="js/jsSource.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
