@@ -17,4 +17,10 @@ var abcUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         alert("It is recommended to have a password between 8 and 128 characters long!\nPlease start over.");
     }
 
-    
+    else{
+        for(var i=0; i<Totlength; i++){
+            var random = Math.floor(Math.random()*allChars.length);
+            resultPass += allChars[random];
+        }
+    }
+    }
