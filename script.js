@@ -26,4 +26,10 @@ var abcUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
 
     document.getElementById("password").innerHTML = resultPass;
+
+function copyPass(){
+
+    document.querySelector("textarea").select();
+    document.execCommand("Copy");
+    alert("Password copied to clipboard!");
 }
