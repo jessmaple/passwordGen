@@ -28,23 +28,19 @@ function generatePass() {
       "Please choose a number between 8 and 128 characters long!\nTry Again."
     );
   } else {
-    if (
-      confirm("Do you want to use uppercase letters?")
-    ) {
+    if (confirm("Do you want to use uppercase letters?")) {
       Array.prototype.push.apply(allChars, abcUpperArr);
     }
 
-    if (
-      confirm("")
-    ) {
+    if (confirm("Do you want to use lowercase letters?")) {
       Array.prototype.push.apply(allChars, abcLowerArr);
     }
 
-    if (confirm("Would you like your password to contain numbers?")) {
+    if (confirm("Do you want to use numbers?")) {
       Array.prototype.push.apply(allChars, numArr);
     }
 
-    if (confirm("Would you like your password to contain symbols?")) {
+    if (confirm("Do you want to use symbols?")) {
       Array.prototype.push.apply(allChars, symArr);
     }
 
@@ -66,5 +62,5 @@ function generatePass() {
 function copyPass() {
   document.querySelector("textarea").select();
   document.execCommand("Copy");
-  alert("Password copied to clipboard!");
+  alert("Password copied.");
 }
