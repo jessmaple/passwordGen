@@ -24,3 +24,6 @@ var abcUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         }
     }
     }
+
+    document.getElementById("password").innerHTML = resultPass;
+}
