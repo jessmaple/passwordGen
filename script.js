@@ -1,35 +1,70 @@
+// Set static variables
+
 var abcUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-   var abcUpperArr = abcUpper.split("");
-   var abcLower = "abcdefghijklmnopqrstuvwxyz";
-   var abcLowerArr = abcLower.split("");
-   var num = "0123456789";
-   var numArr = num.split("");
-   var sym = "!#$%&\()*+,-./:;<=>?@^[\\]^_`{|}~";
-   var symArr = sym.split("");
+var abcUpperArr = abcUpper.split("");
+var abcLower = "abcdefghijklmnopqrstuvwxyz";
+var abcLowerArr = abcLower.split("");
+var num = "0123456789";
+var numArr = num.split("");
+var sym = "!#$%&()*+,-./:;<=>?@^[\\]^_`{|}~";
+var symArr = sym.split("");
 
-   function generatePass(){
-    var allChars = [];
-    var resultPass = "";
+//  Prompt instruction for the user to begin
 
-    var Totlength = prompt("How many characters would you like your password to be?");
+// window.onload = alert("Welcome! Please click 'Generate password' to start!");
 
-    if(Totlength <8 || Totlength > 128){
-        alert("It is recommended to have a password between 8 and 128 characters long!\nPlease start over.");
+// Main function = Password Generation
+
+function generatePass() {
+  var allChars = [];
+  var resultPass = "";
+
+  var Totlength = prompt(
+    "Choose a password length between 8 and 128 characters"
+  );
+
+  if (Totlength < 8 || Totlength > 128) {
+    alert(
+      "Please choose a number between 8 and 128 characters long!\nTry Again."
+    );
+  } else {
+    if (
+      confirm("Do you want to use uppercase letters?")
+    ) {
+      Array.prototype.push.apply(allChars, abcUpperArr);
     }
 
-    else{
-        for(var i=0; i<Totlength; i++){
-            var random = Math.floor(Math.random()*allChars.length);
-            resultPass += allChars[random];
-        }
-    }
+    if (
+      confirm("")
+    ) {
+      Array.prototype.push.apply(allChars, abcLowerArr);
     }
 
-    document.getElementById("password").innerHTML = resultPass;
+    if (confirm("Would you like your password to contain numbers?")) {
+      Array.prototype.push.apply(allChars, numArr);
+    }
 
-function copyPass(){
+    if (confirm("Would you like your password to contain symbols?")) {
+      Array.prototype.push.apply(allChars, symArr);
+    }
 
-    document.querySelector("textarea").select();
-    document.execCommand("Copy");
-    alert("Password copied to clipboard!");
+    if (allChars.length === 0) {
+      alert(
+        "In order to generate a password, at least one character type must be selected"
+      );
+    } else {
+      for (var i = 0; i < Totlength; i++) {
+        var random = Math.floor(Math.random() * allChars.length);
+        resultPass += allChars[random];
+      }
+    }
+  }
+
+  document.getElementById("password").innerHTML = resultPass;
+}
+
+function copyPass() {
+  document.querySelector("textarea").select();
+  document.execCommand("Copy");
+  alert("Password copied to clipboard!");
 }
